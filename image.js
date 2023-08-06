@@ -17,11 +17,11 @@ function previewAndGetBase64() {
   const reader = new FileReader();
   reader.onload = function() {
     const img = document.getElementById("previewImage");
-    img.src = this.result;
+    
     
     // Extract base64 data
     let base64 = this.result.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "");
-    
+    img.src = this.result;
     // base64 data is now available
   };
   reader.readAsDataURL(file);
